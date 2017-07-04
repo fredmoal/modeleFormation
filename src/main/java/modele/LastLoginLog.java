@@ -18,7 +18,7 @@ public class LastLoginLog {
         this.dateTime = LocalDateTime.now();
     }
 
-    public static void newLogin(User user) {
+    public static synchronized void newLogin(User user) {
         lastLogings.put(user.getPseudo(), new LastLoginLog(user));
     }
 
